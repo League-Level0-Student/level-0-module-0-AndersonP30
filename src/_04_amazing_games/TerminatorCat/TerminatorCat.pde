@@ -9,8 +9,8 @@
 // This line of code creates a variable to hold your faccate picture
 // You will use it later.
 PImage cat;
-int x=0;
-int y=0;
+int x=291;
+int y=276;
 
 void setup() {
   
@@ -19,12 +19,13 @@ void setup() {
 cat = loadImage("cat.jpg");
   
 // 3. Set the size of the sketch. Make it big enough to show the cat you chose.
-
+size(600,600);
+cat.resize(600,600);
 // 4. Resize the cat so it is the same size as the sketch
 
 // 5. DRAW CAT.    Use the background() command to make the cat the background of the sketch
 //    Run the program to see if the cat is drawn. Get this working before you go on.
- 
+ background(cat);
 
   }
 
@@ -43,25 +44,37 @@ void draw() {
 
 // 8. DRAW CIRCLES.
 //     The circles will have black lines around them by default. Put noStroke(); here to remove them.
-
+noStroke();
 // 9.  COLOR.  Set the color of your ellipse to the laser color you would like
 //    Remember to use the   fill()  command to set colors.
+fill(200, 0, 0);
+ellipse(x+70, y+14, 25, 25);
 
+fill(200, 0, 0);
+ellipse(x, y, 25, 25);
+
+
+if (x >= width){
+x = (291);
+y = (276);
+background(cat);
+}
+}
 
 // 10 Use the ellipse() command to draw a circle on the eye (you will have to guess its size). 
 //    Use the x and y variables you just created to place the ellipse in the correct location.
 //                  The ellipse command looks like this:
-                ellipse(x, y, width, height);
 // Run the program to make sure it is in the right place and is the right size.
-}
+
 
 // 11.  LASER BEAM.  This code will make your ellipse move down and to the right when you press 
 //      the space bar. Run the program to test it.
 //      If you want it to move to the left, change to x-1=.
 void keyPressed() {
-    x+=1;
-    y+=1;
-    
+    x+=10;
+    y+=10;
+
+   
 // 12.  If you want them to go faster, add more than one each time the key is pressed    
 }
  
